@@ -1,14 +1,20 @@
 import './App.css';
 import { AppRouter } from './routing/AppRouter'
+import { PruebaContext } from './context/PruebaContext';
 
 function App() {
+  const curso = {
+    id: new Date().getTime(),
+    titulo: "Master en TypeScript",
+    contenido : "Muchas horas de contenido"
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Use Context</h1>
 
+      <PruebaContext.Provider value={curso}>
         <AppRouter />
-      </header>
+      </PruebaContext.Provider>
+
     </div>
   );
 }
